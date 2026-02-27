@@ -16,6 +16,9 @@
 .menu hover{
   background-color: lightgray;
   color:black;
+.menu a{
+  padding:15px 20px;
+  color: pink;
 }
 .content{
   flex: 70%;
