@@ -4,33 +4,35 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-}
-
+/* 1. Cấu trúc tổng thể: Header chiếm chỗ cố định, Content tự giãn */
 .container {
     display: flex;
-    flex-direction: column; /* Sửa lỗi 'colum' của bạn */
-    min-height: 100vh;
+    flex-direction: column;
+    min-height: 100vh; /* Phủ kín chiều cao màn hình */
 }
 
-/* HEADER */
+/* 2. Header: Đảm bảo có chiều cao để dán banner */
+.header {
+    width: 100%;
+    /* Bạn có thể để chiều cao tự động theo ảnh hoặc cố định */
+    background-color: #f0f0f0; 
+}
+
 .header img {
     width: 100%;
-    display: block;
+    display: block; /* Loại bỏ khoảng trống dưới ảnh */
 }
 
-/* MENU */
+/* 3. Menu: Thanh ngang */
 .menu {
-    background-color: #2c3e50; /* Màu xám đậm như hình */
+    background-color: #2c3e50;
     display: flex;
-    padding-left: 50px;
+    padding: 0 20px;
 }
 
 .menu a {
     padding: 15px 20px;
-    color: white; /* Đổi từ pink sang white cho giống mẫu */
+    color: white;
     text-decoration: none;
     font-size: 14px;
 }
@@ -39,50 +41,28 @@ body {
     background-color: #34495e;
 }
 
-/* CONTENT */
+/* 4. CONTENT: Đây là phần quan trọng nhất để sửa lỗi khung hình 1 */
 .content {
-    flex: 1; /* Tự động giãn rộng phần còn lại */
-    padding: 20px 10%;
-    background-color: white;
-}
-
-.title-main {
-    text-align: center;
-    color: red;
-    margin-bottom: 30px;
-    font-size: 24pt;
-}
-
-.intro-wrapper {
+    flex: 1; /* Tự động chiếm toàn bộ không gian còn lại giữa Menu và Footer */
     display: flex;
-    gap: 30px; /* Khoảng cách giữa ảnh và chữ */
+    flex-direction: column;
+    background-color: white;
+    overflow: hidden; /* Ngăn chặn thanh cuộn kép bên ngoài */
 }
 
-.avatar img {
-    width: 200px; /* Điều chỉnh kích thước ảnh chân dung */
-    border: 1px solid #ddd;
+.content iframe {
+    width: 100%;
+    height: 100%;
+    flex: 1; /* Ép iframe giãn kín chiều cao của thẻ cha .content */
+    border: none;
+    display: block;
 }
 
-/* Các định dạng văn bản theo yêu cầu của bạn */
-.f1 {
-    color: tomato;
-    margin-top: 18pt;
-    margin-bottom: 5pt;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.f2 {
-    color: black;
-    margin-bottom: 6pt;
-    font-size: 15px;
-}
-
-/* FOOTER */
+/* 5. Footer: Nằm dưới cùng */
 .footer {
     background-color: #2c3e50;
     color: white;
     text-align: center;
-    padding: 15px;
-    font-size: 14px;
+    padding: 10px;
+    font-size: 13px;
 }
