@@ -1,57 +1,88 @@
-.container{
-  display: flex;
-  flex-direction: colum;
-  height: 100vh;
-}
-.header{
-  flex: 15%;
-  background-color: lightgray;
-}
-.menu{
-  flex: 5%;
-  background-color: lightgray;
-  display: flex;
-  align-items: center;
-}
-.menu hover{
-  background-color: lightgray;
-  color:black;
-.menu a{
-  padding:15px 20px;
-  color: pink;
-}
-.content{
-  flex: 70%;
-  background-color: white;
-}
-.content iframe{
-  flex: 1;
-  width: 100%;
-  height:100%;
-  border: 0;
-}
-.footer{
-  flex: 10%;
-  background-color: lightgray;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-h1 {
-  color: red;
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
+
+.container {
+    display: flex;
+    flex-direction: column; /* Sửa lỗi 'colum' của bạn */
+    min-height: 100vh;
+}
+
+/* HEADER */
+.header img {
+    width: 100%;
+    display: block;
+}
+
+/* MENU */
+.menu {
+    background-color: #2c3e50; /* Màu xám đậm như hình */
+    display: flex;
+    padding-left: 50px;
+}
+
+.menu a {
+    padding: 15px 20px;
+    color: white; /* Đổi từ pink sang white cho giống mẫu */
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.menu a:hover {
+    background-color: #34495e;
+}
+
+/* CONTENT */
+.content {
+    flex: 1; /* Tự động giãn rộng phần còn lại */
+    padding: 20px 10%;
+    background-color: white;
+}
+
+.title-main {
+    text-align: center;
+    color: red;
+    margin-bottom: 30px;
+    font-size: 24pt;
+}
+
+.intro-wrapper {
+    display: flex;
+    gap: 30px; /* Khoảng cách giữa ảnh và chữ */
+}
+
+.avatar img {
+    width: 200px; /* Điều chỉnh kích thước ảnh chân dung */
+    border: 1px solid #ddd;
+}
+
+/* Các định dạng văn bản theo yêu cầu của bạn */
 .f1 {
-   color: tomato;
-  margin-top: 18pt;
-  margin-bottom: 12pt;
-  font-size: 20px;
-  font-weight: bold;
-  font-family: Arial;
-}
-.f2 {
-   color: black;
-  margin-top: 6pt;
-  margin-bottom: 6pt;
-  font-size: 15px;
-  font-weight: normal;
-  font-family: Arial;
+    color: tomato;
+    margin-top: 18pt;
+    margin-bottom: 5pt;
+    font-size: 20px;
+    font-weight: bold;
 }
 
+.f2 {
+    color: black;
+    margin-bottom: 6pt;
+    font-size: 15px;
+}
+
+/* FOOTER */
+.footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+}
