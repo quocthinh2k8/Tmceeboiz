@@ -75,24 +75,32 @@ html, body {
     font-family: Arial;
     font-size: 13px;
 }
-/* 1. Khống chế độ cao Header nhỏ lại (Slim Header) */
+/* 1. Chỉnh lại khung Header để hiện đầy đủ nội dung */
 .header {
     width: 100%;
-    height: 150px;         /* Đã giảm từ 300px xuống 150px để gọn gàng hơn */
-    overflow: hidden;      /* Đảm bảo phần ảnh thừa không tràn ra ngoài */
+    height: auto;          /* Để chiều cao tự động theo ảnh, không bị cắt nửa */
+    max-height: 280px;     /* Giới hạn tối đa để không quá to trên máy tính */
+    overflow: hidden;
+    background-color: #001a33; 
     display: block;
-    background-color: #001a33; /* Màu nền tối để đồng bộ với ảnh công nghệ */
 }
 
-/* 2. Căn chỉnh ảnh banner hiển thị hoàn hảo trong khung 150px */
+/* 2. Ép ảnh hiển thị trọn vẹn nhất có thể */
 .Banner-png {
     width: 100%;
-    height: 100%;          /* Buộc ảnh cao bằng đúng 150px của header */
+    height: auto;          /* Giữ đúng tỷ lệ gốc của ảnh */
     display: block;
-    object-fit: cover;     /* Giữ đúng tỷ lệ, tự động cắt rìa để lấp đầy khung */
     
-    /* Dòng dưới đây rất quan trọng: 
-       'center 25%' giúp đẩy ảnh lên một chút để không bị mất Logo và tên trường 
-    */
-    object-position: center 25%; 
+    /* Nếu bạn muốn dùng chiều cao cố định mà không mất chữ, 
+       hãy dùng 'contain' thay vì 'cover' */
+    object-fit: contain;   
+    background-color: #001a33; /* Màu nền bù vào nếu ảnh không khít khung */
 }
+
+/* 3. Một mẹo nhỏ cho thiết bị di động (như ảnh điện thoại bạn gửi) */
+@media (max-width: 768px) {
+    .header {
+        max-height: 150px; /* Trên điện thoại thì để nhỏ lại cho vừa màn hình */
+    }
+}
+
