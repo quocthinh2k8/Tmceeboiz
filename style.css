@@ -75,19 +75,24 @@ html, body {
     font-family: Arial;
     font-size: 13px;
 }
-/* Khống chế độ cao của toàn bộ vùng Header */
+/* 1. Khống chế độ cao Header nhỏ lại (Slim Header) */
 .header {
     width: 100%;
-    height: 300px;       /* Bạn có thể chỉnh con số này (250px - 350px) cho vừa mắt */
-    overflow: hidden;    /* Cắt bỏ phần ảnh thừa ra ngoài khung */
+    height: 150px;         /* Đã giảm từ 300px xuống 150px để gọn gàng hơn */
+    overflow: hidden;      /* Đảm bảo phần ảnh thừa không tràn ra ngoài */
     display: block;
+    background-color: #001a33; /* Màu nền tối để đồng bộ với ảnh công nghệ */
 }
 
-/* Ép ảnh banner vừa vặn vào khung Header */
-.Banner.png {
+/* 2. Căn chỉnh ảnh banner hiển thị hoàn hảo trong khung 150px */
+.Banner-png {
     width: 100%;
-    height: 100%;        /* Buộc ảnh cao bằng khung 300px ở trên */
-    object-fit: cover;   /* Giữ đúng tỷ lệ ảnh, tự động cắt bớt rìa để lấp đầy khung */
-    object-position: center; /* Luôn giữ tâm điểm của ảnh ở giữa khung */
+    height: 100%;          /* Buộc ảnh cao bằng đúng 150px của header */
     display: block;
+    object-fit: cover;     /* Giữ đúng tỷ lệ, tự động cắt rìa để lấp đầy khung */
+    
+    /* Dòng dưới đây rất quan trọng: 
+       'center 25%' giúp đẩy ảnh lên một chút để không bị mất Logo và tên trường 
+    */
+    object-position: center 25%; 
 }
