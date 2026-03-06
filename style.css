@@ -84,7 +84,7 @@ html, body {
 }
 
 /* Ép ảnh banner vừa vặn vào khung Header */
-.banner-img {
+.Banner.png {
     width: 100%;
     height: 100%;        /* Buộc ảnh cao bằng khung 300px ở trên */
     object-fit: cover;   /* Giữ đúng tỷ lệ ảnh, tự động cắt bớt rìa để lấp đầy khung */
