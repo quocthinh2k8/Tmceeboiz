@@ -3,158 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biểu mẫu đóng góp ý kiến (Hoàn chỉnh)</title>
+    <title>Biểu mẫu và Phản hồi - Tin học 12</title>
     <style>
-        /* CSS để căn lề và tạo kiểu cho biểu mẫu */
         body {
-            font-family: "Times New Roman", Times, serif; /* Phông chữ giống trong sách */
+            font-family: "Times New Roman", Times, serif;
             padding: 20px;
             line-height: 1.6;
+            color: #000;
         }
 
         .form-container {
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
         }
 
-        h1, h3 {
-            margin-top: 0;
-            color: #333;
-        }
-
         h1 {
-            font-size: 24px;
-            margin-bottom: 25px;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 20px;
         }
 
         h3 {
             font-size: 18px;
-            margin-top: 20px;
+            font-weight: bold;
             margin-bottom: 10px;
         }
 
         .row {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             display: flex;
             align-items: flex-start;
         }
 
-        /* Căn lề cho các nhãn (label) */
         label {
             display: inline-block;
-            width: 120px;
-            text-align: left;
-            margin-right: 10px;
-            font-weight: bold; /* Làm đậm nhãn để giống hình */
+            width: 110px;
+            font-weight: normal;
         }
 
         input[type="text"],
         input[type="email"],
         textarea {
-            width: calc(100% - 140px); /* Căn chỉnh độ rộng trường nhập liệu */
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
+            border: 1px solid #767676;
+            padding: 2px 5px;
+            font-family: Arial, sans-serif;
+        }
+
+        input[type="text"], input[type="email"] {
+            width: 300px;
         }
 
         textarea {
-            height: 150px;
-            resize: vertical; /* Cho phép thay đổi kích thước theo chiều dọc */
+            width: 450px;
+            height: 120px;
         }
 
-        /* Thẻlabel bao quanh checkbox và text */
-        .checkbox-label {
-            width: auto;
-            text-align: left;
-            margin-right: 0;
-            font-weight: normal; /* Không làm đậm cho các mục checkbox */
+        .checkbox-group {
+            margin-top: 20px;
+        }
+
+        .checkbox-item {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
         }
 
-        .checkbox-list {
-            margin-top: 25px;
-        }
-
-        .checkbox-list p {
-            margin-top: 0;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        .submit-row {
-            margin-top: 30px;
-            text-align: left;
-        }
-
-        button[type="submit"] {
-            padding: 10px 20px;
-            font-size: 16px;
+        button {
+            margin-top: 15px;
+            padding: 2px 10px;
             cursor: pointer;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
         }
 
-        button[type="submit"]:hover {
-            background-color: #e0e0e0;
+        /* --- PHẦN PHẢN HỒI (HÌNH 4) --- */
+        #response-section {
+            display: none; /* Mặc định ẩn đi, hiện lên khi bấm nút */
+            margin-top: 40px;
+            padding: 15px;
+            border: 1px solid #3366cc;
+            max-width: 100%;
+        }
+
+        .response-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: block;
         }
     </style>
 </head>
 <body>
 
     <div class="form-container">
-        <h1 style="font-weight: bold; text-align: left;">Đóng góp ý kiến cho thư viện của nhà trường</h1>
+        <h1>Đóng góp ý kiến cho thư viện của nhà trường</h1>
 
-        <form action="#" method="post">
-            <h3 style="font-weight: bold;">1. Thông tin về người góp ý</h3>
+        <form id="feedbackForm">
+            <h3>1. Thông tin về người góp ý</h3>
             <div class="row">
-                <label for="fullname">Họ và tên:</label>
-                <input type="text" id="fullname" name="fullname">
+                <label>Họ và tên:</label>
+                <input type="text" name="fullname">
             </div>
             <div class="row">
-                <label for="email">Địa chỉ email:</label>
-                <input type="email" id="email" name="email">
+                <label>Địa chỉ email:</label>
+                <input type="email" name="email">
             </div>
 
-            <h3 style="font-weight: bold;">2. Đóng góp ý kiến</h3>
+            <br>
+            <h3>2. Đóng góp ý kiến</h3>
             <div class="row">
-                <label for="feedback">Ý kiến đóng góp:</label>
-                <textarea id="feedback" name="feedback"></textarea>
+                <label>Ý kiến đóng góp:</label>
+                <textarea name="feedback"></textarea>
             </div>
 
-            <div class="checkbox-list">
-                <p>Thể loại cần bổ sung thêm sách</p>
-                
-                <label class="checkbox-label">
-                    <input type="checkbox" name="genre[]" value="truyen-ngan"> 
-                    Truyện ngắn
-                </label>
-                <label class="checkbox-label">
-                    <input type="checkbox" name="genre[]" value="ky-nang-song"> 
-                    Kỹ năng sống
-                </label>
-                <label class="checkbox-label">
-                    <input type="checkbox" name="genre[]" value="cntt"> 
-                    Công nghệ thông tin
-                </label>
-                <label class="checkbox-label">
-                    <input type="checkbox" name="genre[]" value="truyen-tranh"> 
-                    Truyện tranh
-                </label>
-                <label class="checkbox-label">
-                    <input type="checkbox" name="genre[]" value="lich-su"> 
-                    Lịch sử
-                </label>
+            <div class="checkbox-group">
+                <p style="margin-bottom: 5px;">Thể loại cần bổ sung thêm sách</p>
+                <span class="checkbox-item"><input type="checkbox"> Truyện ngắn</span>
+                <span class="checkbox-item"><input type="checkbox"> Kỹ năng sống</span>
+                <span class="checkbox-item"><input type="checkbox"> Công nghệ thông tin</span>
+                <span class="checkbox-item"><input type="checkbox"> Truyện tranh</span>
+                <span class="checkbox-item"><input type="checkbox"> Lịch sử</span>
             </div>
 
-            <div class="submit-row">
-                <button type="submit">Góp ý</button>
-            </div>
+            <button type="submit">Góp ý</button>
+        </form>
 
-            </form>
+        <div id="response-section">
+            <span class="response-title">Cám ơn bạn đã góp ý kiến</span>
+            <p>Chúng tôi xin ghi nhận ý kiến của bạn và sẽ cải tiến, nâng cao chất lượng phục vụ hơn nữa trong thời gian sắp tới.</p>
+        </div>
     </div>
+
+    <script>
+        // Đoạn code xử lý hiện phần phản hồi khi bấm nút
+        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Ngăn trang web tải lại trang
+            document.getElementById('response-section').style.display = 'block';
+            
+            // Cuộn xuống phần phản hồi để người dùng nhìn thấy ngay
+            document.getElementById('response-section').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
 
 </body>
 </html>
