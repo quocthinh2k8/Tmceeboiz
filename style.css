@@ -4,51 +4,44 @@
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-    /* Thầy đã XÓA dòng overflow: hidden; ở đây để trang web có thể cuộn được bình thường */
+body {
+    background-color: #f4f4f4; /* Thêm chút màu nền xám nhạt cho web chuyên nghiệp hơn */
 }
 
 .container {
     display: flex;
-    flex-direction: column; 
-    /* Đổi height thành min-height: Đảm bảo vùng chứa luôn cao ít nhất bằng màn hình (100vh), 
-       nhưng nếu nội dung bên trong dài hơn, nó vẫn được phép giãn ra để tạo thanh cuộn */
-    min-height: 100vh; 
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Thầy đã GỘP 2 class .header bị trùng lặp lại thành 1 để thống nhất cấu trúc Flexbox */
 .header {
-    flex: 0 0 auto; 
     width: 100%;
-    background-color: #001a33; /* Ưu tiên màu xanh đen nền tảng của trường */
-    max-height: 280px;     
-    overflow: hidden;
+    background-color: #001a33;
 }
 
-/* Nếu thẻ HTML của em dùng <img class="Banner-png" ...> */
 .Banner-png {
     width: 100%;
-    height: auto;          
+    height: auto;
     display: block;
-    object-fit: contain;   
-    background-color: #001a33; 
+    max-height: 280px;
+    object-fit: contain;
 }
 
 .menu {
-    flex: 0 0 auto; 
-    background-color: #2c3e50; 
+    background-color: #2c3e50;
     display: flex;
     align-items: center;
     padding-left: 20px;
+    flex-wrap: wrap; /* Đảm bảo menu không bị vỡ trên màn hình nhỏ */
 }
 
 .menu a {
     padding: 15px 20px;
     color: white;
     text-decoration: none;
-    font-family: Arial, sans-serif; /* Nên thêm sans-serif làm phông chữ dự phòng */
+    font-family: Arial, sans-serif;
     font-size: 14px;
+    display: block;
 }
 
 .menu a:hover {
@@ -56,21 +49,21 @@ html, body {
 }
 
 .content {
-    flex: 1 1 auto; /* Tự động chiếm phần không gian còn lại */
-    display: flex;
+    flex: 1; 
+    width: 100%;
     background-color: white;
 }
 
+/* ĐIỂM CHỐT SỬA LỖI Ở ĐÂY */
 .content iframe {
     width: 100%;
-    height: 100%;
-    /* Thêm min-height để đảm bảo form bên trong iframe không bị ép cắt cụt trên màn hình máy tính lớn */
-    min-height: 600px; 
+    /* Thầy đổi 100% thành 800px. Nếu form của em dài hơn, có thể tăng lên 900px hoặc 1000px */
+    height: 800px; 
     border: none;
+    display: block;
 }
 
 .footer {
-    flex: 0 0 auto;
     background-color: #2c3e50;
     color: white;
     text-align: center;
@@ -80,7 +73,7 @@ html, body {
 }
 
 @media (max-width: 768px) {
-    .header {
-        max-height: 150px; 
+    .Banner-png {
+        max-height: 150px;
     }
 }
