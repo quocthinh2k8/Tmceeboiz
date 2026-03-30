@@ -23,8 +23,10 @@ body {
     width: 100%;
     height: auto;
     display: block;
-    max-height: 280px;
-    object-fit: contain;
+    /* --- ĐÃ SỬA ĐỂ KHẮC PHỤC LỖI TRÊN MÁY TÍNH --- */
+    max-height: 400px; /* Tăng chiều cao tối đa trên màn hình rộng để trông cân đối hơn */
+    /* --------------------------------------------- */
+    object-fit: contain; /* Giữ nguyên contain để logo và text không bị cắt */
 }
 
 .menu {
@@ -74,6 +76,8 @@ body {
 
 @media (max-width: 768px) {
     .Banner-png {
-        max-height: 150px;
+        /* --- ĐÃ SỬA ĐỂ KHẮC PHỤC LỖI TRÊN ĐIỆN THOẠI --- */
+        max-height: 100px; /* Giảm đáng kể chiều cao tối đa trên điện thoại để không bị "dư chiều dài" */
+        /* ----------------------------------------------- */
     }
 }
