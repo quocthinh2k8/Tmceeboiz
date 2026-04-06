@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #f4f4f4; /* Thêm chút màu nền xám nhạt cho web chuyên nghiệp hơn */
+    background-color: #f4f4f4; 
 }
 
 .container {
@@ -23,10 +23,8 @@ body {
     width: 100%;
     height: auto;
     display: block;
-    /* --- ĐÃ SỬA ĐỂ KHẮC PHỤC LỖI TRÊN MÁY TÍNH --- */
-    max-height: 400px; /* Tăng chiều cao tối đa trên màn hình rộng để trông cân đối hơn */
-    /* --------------------------------------------- */
-    object-fit: contain; /* Giữ nguyên contain để logo và text không bị cắt */
+    max-height: 400px; 
+    object-fit: contain; 
 }
 
 .menu {
@@ -34,7 +32,7 @@ body {
     display: flex;
     align-items: center;
     padding-left: 20px;
-    flex-wrap: wrap; /* Đảm bảo menu không bị vỡ trên màn hình nhỏ */
+    flex-wrap: wrap; 
 }
 
 .menu a {
@@ -56,10 +54,8 @@ body {
     background-color: white;
 }
 
-/* ĐIỂM CHỐT SỬA LỖI Ở ĐÂY */
 .content iframe {
     width: 100%;
-    /* Thầy đổi 100% thành 800px. Nếu form của em dài hơn, có thể tăng lên 900px hoặc 1000px */
     height: 800px; 
     border: none;
     display: block;
@@ -76,8 +72,6 @@ body {
 
 @media (max-width: 768px) {
     .Banner-png {
-        /* --- ĐÃ SỬA ĐỂ KHẮC PHỤC LỖI TRÊN ĐIỆN THOẠI --- */
-        max-height: 100px; /* Giảm đáng kể chiều cao tối đa trên điện thoại để không bị "dư chiều dài" */
-        /* ----------------------------------------------- */
+        max-height: 100px;
     }
 }
